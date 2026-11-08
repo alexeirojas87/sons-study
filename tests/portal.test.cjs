@@ -93,13 +93,17 @@ test('storage failures are surfaced and never mistaken for a saved result', () =
   assert.ok(core.load(unavailable).error);
   assert.throws(() => core.save(unavailable, core.emptyState()), /full/);
 });
-test('all local routes exist and preserved exam is byte-identical', () => {
+test('all local routes exist and exam loads the upgraded shared evaluator', () => {
   const html = fs.readFileSync(path.join(root,'index.html'),'utf8');
   for (const route of ['css/style.css','js/app.mjs','activities/matematica-6to.html']) {
     assert.ok(html.includes(route)); assert.ok(fs.existsSync(path.join(root,route)));
   }
   const exam = fs.readFileSync(path.join(root,'activities/matematica-6to.html'));
-  assert.equal(createHash('sha256').update(exam).digest('hex'), '900b5bc03b77e47d6646ab155a3341546866a1561c2de97f19d85a1b895d6d59');
+  assert.match(exam.toString(), /src="..\/js\/contest-exam.mjs"/);
+  const examScript = fs.readFileSync(path.join(root,'js/contest-exam.mjs'),'utf8');
+  assert.match(examScript, /evaluate\(q.expected/);
+  assert.doesNotMatch(examScript, /function normalize/);
+  assert.ok(fs.existsSync(path.join(root,'activities/preparacion-concurso.html')));
 });
 
 test('advanced responses roundtrip and stay isolated by learner', () => {

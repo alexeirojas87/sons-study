@@ -13,12 +13,12 @@ export const units = {
     practice: [
       { id: 'm6-p1', question: '¿Cuántos libros llegan en total?', choices: ['30', '144', '126'], answer: 1, hint: 'Multiplica cajas por libros en cada caja.', explain: '6 × 24 = 144.' },
       { id: 'm6-p2', question: '¿Cuántos quedan para repartir después de la reserva?', choices: ['126', '42', '162'], answer: 0, hint: 'Resta los 18 que se guardan.', explain: '144 − 18 = 126.' },
-      { id: 'm6-p3', question: '¿Qué cálculo comprueba el reparto?', choices: ['42 + 3 + 18', '42 × 3 + 18', '144 ÷ 18'], answer: 1, hint: 'Deshaz el reparto y luego sumá la reserva.', explain: '42 × 3 + 18 = 144, el total inicial.' }
+      { id: 'm6-p3', question: '¿Qué cálculo comprueba el reparto?', choices: ['42 + 3 + 18', '42 × 3 + 18', '144 ÷ 18'], answer: 1, hint: 'Deshaz el reparto y luego suma la reserva.', explain: '42 × 3 + 18 = 144, el total inicial.' }
     ],
     challenge: { id: 'm6-ch', question: 'Si se abre una cuarta aula y la reserva sigue siendo 18, ¿se puede repartir el resto en partes iguales sin libros sueltos?', choices: ['Sí, 31 por aula', 'No, sobran 2 libros', 'Sí, 32 por aula'], answer: 1, hint: 'Divide 126 entre 4 y mira el residuo.', explain: '126 = 4 × 31 + 2; sobran 2.' },
     extension: 'Diseña otro reparto justo: cambia SOLO el tamaño de la reserva para que 4 aulas reciban igual cantidad y no sobre ningún libro. Explica por qué tu nueva reserva funciona.',
     extensionCriteria: 'Comprueba que el total tras la reserva sea divisible entre cuatro.',
-    reflection: 'Escribe qué operación elegiste primero y por qué. Rúbrica: nombrá las tres acciones, comprobá con la operación inversa y explicá el residuo del desafío.'
+    reflection: 'Escribe qué operación elegiste primero y por qué. Para revisar tu explicación: menciona las tres acciones, comprueba con la operación inversa y explica qué significa el residuo del desafío.'
   },
   math3: {
     title: 'Matemática', unit: 'El valor de cada cifra', mark: '◇',
